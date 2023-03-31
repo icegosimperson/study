@@ -4,27 +4,27 @@ int number = 10;
 int data[10] = { 1, 10, 5, 8, 7, 6, 4, 3, 2, 9 };
 
 void Quick_Sort(int* data, int start, int end) {
-	if (start >= end) //¿ø¼Ò°¡ 1°³ÀÎ °æ¿ì 
+	if (start >= end) //ì›ì†Œê°€ 1ê°œì¸ ê²½ìš° 
 		return;
 
-	int key = start; // Å°´Â ºÎºĞ ÁıÇÕÀÇ Ã¹¹øÂ° ¿ø¼Ò 
-	int i = start + 1; //¿ŞÂÊ Ãâ¹ß ÁöÁ¡
-	int j = end; //¿À¸¥ÂÊ Ãâ¹ß ÁöÁ¡
-	int temp; //ÀÓ½Ã º¯¼ö
+	int key = start; // í‚¤ëŠ” ë¶€ë¶„ ì§‘í•©ì˜ ì²«ë²ˆì§¸ ì›ì†Œ 
+	int i = start + 1; //ì™¼ìª½ ì¶œë°œ ì§€ì 
+	int j = end; //ì˜¤ë¥¸ìª½ ì¶œë°œ ì§€ì 
+	int temp; //ì„ì‹œ ë³€ìˆ˜
 
-	while (i <= j) { // ¾ù°¥¸± ¶§±îÁö ¹İº¹
-		while (data[i] > data[key]) { //Å° °ªº¸´Ù Å« °ªÀ» ¸¸³¯ ¶§±îÁö ¿À¸¥ÂÊÀ¸·Î ÀÌµ¿
+	while (i <= j) { // ì—‡ê°ˆë¦´ ë•Œê¹Œì§€ ë°˜ë³µ
+		while (data[i] >= data[key]) { //í‚¤ ê°’ë³´ë‹¤ í° ê°’ì„ ë§Œë‚  ë•Œê¹Œì§€ ì˜¤ë¥¸ìª½ìœ¼ë¡œ ì´ë™
 			i++;
 		}
-		while (data[j] <= data[key] && j>start) { //Å° °ªº¸´Ù ÀÛÀº °ªÀ» ¸¸³¯ ¶§±îÁö ¿À¸¥ÂÊÀ¸·Î ÀÌµ¿
+		while (data[j] <= data[key] && j>start) { //í‚¤ ê°’ë³´ë‹¤ ì‘ì€ ê°’ì„ ë§Œë‚  ë•Œê¹Œì§€ ì˜¤ë¥¸ìª½ìœ¼ë¡œ ì´ë™
 			j--;
 		}
-		if (i > j) { //ÇöÀç ¾ù°¥¸° »óÅÂ¸é Å° °ª°ú ±³Ã¼
+		if (i > j) { //í˜„ì¬ ì—‡ê°ˆë¦° ìƒíƒœë©´ í‚¤ ê°’ê³¼ êµì²´
 			temp = data[j];
 			data[j] = data[key];
 			data[key] = temp;
 		}
-		else { // ¾ù°¥¸®Áö ¾Ê¾ÒÀ» ¶§ 
+		else { // ì—‡ê°ˆë¦¬ì§€ ì•Šì•˜ì„ ë•Œ 
 			temp = data[i];
 			data[i] = data[j];
 			data[j] = temp;
